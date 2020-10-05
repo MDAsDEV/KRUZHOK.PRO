@@ -42,8 +42,10 @@ class ClassPredictor:
 
 model = ClassPredictor()
 
-
-image_path = input()
+parser.add_argument('--path', metavar='N', type=str, nargs='+',
+                    help='an integer for the accumulator')
+args = parser.parse_args()
+image_path = args.path[0]
 
 class_ = model.predict(image_path)
 print(class_)
